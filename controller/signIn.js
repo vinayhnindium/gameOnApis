@@ -21,6 +21,7 @@ const signin = async (req, res) => {
         data: result.rows,
       });
     }
+    req.session.userId = result.rows[0].id;
     const dbEmail = result.rows[0].email;
     const dbPassword = result.rows[0].password;
     const dbToken = result.rows[0].token;
